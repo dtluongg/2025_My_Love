@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tết 2025</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url('https://media.phunutoday.vn/files/content/2024/12/13/3-khoang-tien-nguoi-lao-dong-co-the-nhan-dip-tet-duong-lich-2025-phunutoday-01-2259.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .panel {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .firework-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .firework {
+            width: 50px;
+            height: 150px;
+            background-color: red;
+            border: 2px solid black;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .fuse {
+            width: 5px;
+            height: 50px;
+            background-color: black;
+            position: absolute;
+            top: -50px;
+            left: calc(50% - 2.5px);
+        }
+
+        .countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: yellow;
+            margin-top: 20px;
+        }
+
+        .screen2 {
+            display: none;
+            text-align: center;
+            margin-top: 50px;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .left-frame,
+        .right-frame {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .left-frame {
+            width: 45%;
+        }
+
+        .left-frame img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .right-frame {
+            width: 45%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .heart {
+            width: 50%;
+            height: 400px;
+            background: url('./image/hinhtraitim.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 50%;
+            /* Optional: tạo viền mềm mại */
+        }
+
+        .heart::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* Màu phủ mờ lên hình */
+            z-index: 1;
+        }
+
+        .heart span {
+            position: relative;
+            z-index: 2;
+            font-size: 20px;
+        }
+
+        .message {
+            font-size: 20px;
+            color: #d14;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="panel" id="screen1">
+        <h1>Chúc mừng năm mới 2025!</h1>
+        <div class="firework-container">
+            <div class="firework">
+                <div class="fuse"></div>
+            </div>
+        </div>
+        <div class="countdown" id="countdown">10</div>
+        <button onclick="ignite()">Châm ngòi</button>
+    </div>
+
+    <div class="screen2" id="screen2">
+        <div class="left-frame">
+            <img src="../tet2025/image/image1.jpg" alt="Chúc mừng năm mới">
+        </div>
+        <div class="right-frame">
+            <div class="heart">Anhh yêuu emmm</div>
+            <div class="message">
+                <p>Happy new year em nháaaa</p>
+                <p>Người yêu của anh ơi, em là cô gái xinh đẹp và đáng yêu nhất mà anh từng gặp. Thật may mắn khi 2024 anh đã được đồng hành cùng em, được yêu em và được em yêu...</p>
+                <p>Năm mới đến rồi, anh chúc 2 đứa mình và gia đình của cả hai sẽ luôn vui vẻ, luôn hạnh phúc</p>
+                <p>Chúc em sang năm mới sẽ có nhiều sức khoẻ, may mắn, vui vẻ, hạnh phúc và tài lộc nháaa </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function ignite() {
+            const countdownElement = document.getElementById('countdown');
+            let countdown = 1;
+            countdownElement.style.display = 'block';
+
+            const countdownInterval = setInterval(() => {
+                countdown -= 1;
+                countdownElement.textContent = countdown;
+
+                if (countdown === 0) {
+                    clearInterval(countdownInterval);
+                    showScreen2();
+                }
+            }, 1000);
+        }
+
+        function showScreen2() {
+            document.getElementById('screen1').style.display = 'none';
+            document.getElementById('screen2').style.display = 'flex';
+        }
+    </script>
+</body>
+
+</html>
