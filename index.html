@@ -129,6 +129,63 @@
             font-weight: bold;
             text-align: center;
         }
+        /* Media Queries for mobile responsiveness */
+        @media (max-width: 768px) {
+            .panel {
+                padding: 10px;
+            }
+
+            .countdown {
+                font-size: 20px;
+            }
+
+            .firework-container {
+                margin-top: 20px;
+            }
+
+            .firework {
+                width: 40px;
+                height: 120px;
+            }
+
+            .screen2 {
+                margin-top: 20px;
+                flex-direction: column;
+            }
+
+            .left-frame,
+            .right-frame {
+                width: 100%;
+            }
+
+            .right-frame {
+                flex-direction: column;
+            }
+
+            .heart {
+                width: 80%;
+                height: 250px;
+            }
+
+            .message {
+                font-size: 16px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .heart {
+                width: 90%;
+                height: 200px;
+            }
+
+            .message {
+                font-size: 14px;
+            }
+
+            .countdown {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 
